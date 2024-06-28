@@ -17,13 +17,18 @@ import { SelectButtonModule } from 'primeng/selectbutton';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { InputSwitchModule } from 'primeng/inputswitch';
+import { HeaderComponent } from './header/header.component';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     PrivateComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule, 
+    FormsModule,
     PrivateRoutingModule,
     TooltipModule,
     ChartModule,

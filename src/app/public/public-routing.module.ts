@@ -6,7 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { SignonComponent } from './signon/signon.component';
 
 const routes: Routes = [
-  { path : '', redirectTo : 'home', pathMatch :'full' }, 
+  { path : '', redirectTo : 'login', pathMatch :'full' }, 
   { path : 'home', component : HomeComponent, loadChildren : () => import('./home/home.module').then((m) => m.HomeModule) },
   { path : 'signon', component : SignonComponent, loadChildren : () => import('./signon/signon.module').then((m) => m.SignonModule) }, 
   { path : 'login', component : LoginComponent, loadChildren : () => import('./login/login.module').then((m) => m.LoginModule) },  

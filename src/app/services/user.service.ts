@@ -51,70 +51,70 @@ export class UserService {
     }
   }
 
-  async addUser(newUser : User  ): Promise<number>{
-    if(newUser.password != undefined && newUser.email != undefined){
-      const  userForRequest : newUserInterface = {
-        lastname  : newUser.lastname,  
-        firstname : newUser.firstname, 
-        role      : newUser.role.value,
-        mail     : newUser.email,
-        type      : newUser.type.value, 
-        username  : newUser.username, 
-        password  : newUser.password,
-        isActive  : newUser.state.value,
-        last_connexion : undefined
-       }
+  // async addUser(newUser : User  ): Promise<number>{
+  //   if(newUser.password != undefined && newUser.email != undefined){
+  //     const  userForRequest : newUserInterface = {
+  //       lastname  : newUser.lastname,  
+  //       firstname : newUser.firstname, 
+  //       role      : newUser.role.value,
+  //       mail     : newUser.email,
+  //       type      : newUser.type.value, 
+  //       username  : newUser.username, 
+  //       password  : newUser.password,
+  //       isActive  : newUser.state.value,
+  //       last_connexion : undefined
+  //      }
 
-    try {
-      const response : any = await this.http.post(urls_apis.API_CREATE_USER,userForRequest).toPromise(); 
-      if(response){
-        return response.id;
-      }else{
-        throw new Error('erreur de suppression');
-      }
+  //   try {
+  //     const response : any = await this.http.post(urls_apis.API_CREATE_USER,userForRequest).toPromise(); 
+  //     if(response){
+  //       return response.id;
+  //     }else{
+  //       throw new Error('erreur de suppression');
+  //     }
 
-    } catch (error) {
-      console.log(error)
-    }
-    return 0;
-  }
-  return 0;
-  }
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  //   return 0;
+  // }
+  // return 0;
+  // }
 
-  async updateUser(newInfosUsers : User) : Promise<boolean> {
+  // async updateUser(newInfosUsers : User) : Promise<boolean> {
 
-    if(newInfosUsers.id){
-    const userForRequest : updateUserInterface = {
+  //   if(newInfosUsers.id){
+  //   const userForRequest : updateUserInterface = {
       
-      id          : newInfosUsers.id,
-      username    : newInfosUsers.username,
-      password    : newInfosUsers.password != undefined ? newInfosUsers.password : "",
-      firstname   : newInfosUsers.firstname,
-      lastname    : newInfosUsers.lastname,
-      mail        : newInfosUsers.email != undefined ? newInfosUsers.email : "",
-      type        : newInfosUsers.type.value,
-      role        : newInfosUsers.role.value,
-      isActive    : newInfosUsers.state.value
-    }
+  //     id          : newInfosUsers.id,
+  //     username    : newInfosUsers.username,
+  //     password    : newInfosUsers.password != undefined ? newInfosUsers.password : "",
+  //     firstname   : newInfosUsers.firstname,
+  //     lastname    : newInfosUsers.lastname,
+  //     mail        : newInfosUsers.email != undefined ? newInfosUsers.email : "",
+  //     type        : newInfosUsers.type.value,
+  //     role        : newInfosUsers.role.value,
+  //     isActive    : newInfosUsers.state.value
+  //   }
 
-    try{
-      await this.http.put(urls_apis.API_UPDATE_USER,userForRequest).toPromise(); 
-      return true;
-    } catch (error) {
-      console.log(error)
-    }
-    }
-    return false;
-  }
+  //   try{
+  //     await this.http.put(urls_apis.API_UPDATE_USER,userForRequest).toPromise(); 
+  //     return true;
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  //   }
+  //   return false;
+  // }
 
-  async deleteUser(id : number): Promise<any>{
-    let retour : any; 
-    try{
-      retour = await this.http.delete(urls_apis.API_DELETE_USER + id).toPromise(); 
+  // async deleteUser(id : number): Promise<any>{
+  //   let retour : any; 
+  //   try{
+  //     retour = await this.http.delete(urls_apis.API_DELETE_USER + id).toPromise(); 
       
-    } catch (error) {
-      retour = error
-    }
-    return retour;
-  }
+  //   } catch (error) {
+  //     retour = error
+  //   }
+  //   return retour;
+  // }
 }

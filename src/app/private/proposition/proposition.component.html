@@ -1,0 +1,26 @@
+<div class="conteneur">
+    <div class="MySecret">
+
+    </div>
+
+    <div class="Secret" *ngFor="let secret of secrets; let i = index" >
+         <p>"{{ secret.secret }}"</p>
+
+
+
+       
+        <p-floatLabel>
+            <p-dropdown 
+                [options]="freeUser" 
+                [(ngModel)]="selectedUsers[secret.id]" 
+                optionLabel="prenom" 
+                [showClear]="true"
+                placeholder="Ce secret appartient à ..." 
+                >
+            </p-dropdown>
+            <label for="float-label">Sélectionnez un utilisateur</label>
+        </p-floatLabel>
+
+
+    </div>
+</div>

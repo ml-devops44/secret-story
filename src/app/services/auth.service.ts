@@ -3,9 +3,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { urls_apis } from 'src/environments/api.env';
 import { TokenService } from './token.service';
-import { Router } from '@angular/router';
 import { Observable, interval, switchMap } from 'rxjs';
 import { RoleEnum } from '../common/enums/role.enum';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +14,6 @@ export class AuthenticationService {
   private isAuthenticated     : boolean     = false;
   private firstname           : string      = ""; 
   private lastname            : string      = "";
-  private userRoles           : RoleEnum[]  = [];
   private refreshTokenInterval: number      = 10000; // 10 secondes
 
   constructor(
@@ -43,15 +42,6 @@ export class AuthenticationService {
       this.tokenService.setRefreshToken(response.refreshToken);   // Stockage du refresh-token
       this.firstname  = response.user.firstname;                  // Stockage du prénom de l'utilisateur connecté
       this.lastname   = response.user.lastname;                   // Stockage du nom de l'utilisateur connecté
-      this.clearRoles();                                          // On efface tous les roles 
-
-      if(Array.isArray(response.user.role)){
-        response.user.role.forEach((role: RoleEnum) => {
-          this.addRole(role);                           // On ajoute le role de l'utilisateur
-        });
-      }else{
-        this.addRole(response.user.role);
-      }
       
       this.isAuthenticated = true;
       return true;
@@ -74,7 +64,6 @@ export class AuthenticationService {
     console.log('deconnexion');
     this.isAuthenticated = false;
     this.tokenService.clearTokens();
-    this.clearRoles();
     this.router.navigate(['/public']);
   }
 
@@ -92,14 +81,7 @@ export class AuthenticationService {
         this.firstname        = response.user.firstname;
         this.lastname         = response.user.lastname;
         this.isAuthenticated  = true;
-        this.clearRoles();
-        if(Array.isArray(response.user.role)){
-          response.user.role.forEach((role: RoleEnum) => {
-            this.addRole(role);                           // On ajoute le role de l'utilisateur
-          });
-        }else{
-          this.addRole(response.user.role);
-        }
+       
         return true;
       } else {
         return false;
@@ -117,18 +99,4 @@ export class AuthenticationService {
   }
 
 
-    // Ajouter un rôle à l'utilisateur
-    addRole(role: RoleEnum): void {
-      this.userRoles.push(role);
-    }
-  
-    // Vérifier si l'utilisateur a un rôle spécifique
-    hasRole(role: RoleEnum): boolean {
-      return this.userRoles.includes(role);
-    }
-  
-    // Effacer tous les rôles de l'utilisateur
-    clearRoles(): void {
-      this.userRoles = [];
-    }
 }

@@ -1,0 +1,21 @@
+.header{
+    position: absolute; 
+    background-color: #427C9C;
+    width:100%; 
+    height:80px;
+    top:0px;
+    color:white;
+}
+
+.logo_petit{
+    position: absolute;
+    height: 50px;
+    top:15px; 
+    left:10px;
+}
+
+.table_header{
+    width:calc(100% - 20px);
+    height: 100%;
+    text-align: end;
+}
