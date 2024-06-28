@@ -1,0 +1,108 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Aachen', sans-serif;
+    background: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 390px;
+    height: 844px;
+    position: relative;
+    background: #fff;
+    background-image: url(../../../assets/Fond1.jpg);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo, .logo-small {
+    width: 200px;
+    margin: 20px auto;
+}
+
+.logo-small {
+    width: 100px;
+}
+
+.button-container {
+    width: 100%;
+    text-align: center;
+}
+
+.button {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    line-height: 1.5em;
+}
+
+.pink-button {
+    background: #F4429D;
+}
+
+.pink-button:hover {
+    background: #D7378A;
+}
+
+.blue-button {
+    background: #427C9C;
+}
+
+.blue-button:hover {
+    background: #365E77;
+}
+
+.form-container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: white;
+}
+
+.form-container input, .form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container label {
+    font-family: 'Aachen', sans-serif;
+}
+
+.form-container input,
+.form-container textarea {
+    font-family: 'Aachen', sans-serif;
+}
+
+.button {
+    font-family: 'Aachen', sans-serif;
+}

@@ -1,22 +1,30 @@
-
- 
-            <form class="controle_form_connexion" (submit)="connexion()">
-                <div class="card flex flex-wrap justify-content-center gap-3">
-                    <span class="p-float-label">
-                        <input pInputText id="username" [(ngModel)]="username" placeholder="Entrez votre nom d'utilisateur" name="username" />
-                        <label htmlFor="username">Nom d'utilisateur :</label>
-                    </span>
- 
- 
-                </div>
-                <div class="card flex flex-wrap justify-content-center gap-3">
-                    <span class="p-float-label">
-                        <p-password id="password" [(ngModel)]="password" name="password" [feedback]="false" placeholder="Entrez votre mot de passe" [toggleMask]="true"></p-password>
-                        <label htmlFor="password">Mot de passe :</label>
-                    </span>
-                </div>
-                <div class="card flex justify-content-center">
-                   
-                    <p-button type="submit" label="Connexion" [loading]="loading" ></p-button>
-                </div>
-            </form>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Story - Créer un compte</title>
+    <link href="https://fonts.cdnfonts.com/css/aachen" rel="stylesheet">
+    <link rel="stylesheet" href="login.component.css">
+</head>
+<body>
+    <div class="container">
+        <img class="logo" src="../../../assets/logo.png" alt="Secret Story Logo">
+        <form class="form-container">
+            <label for="fullname">Prénom & Nom :</label>
+            <input type="text" id="fullname" name="fullname" required>
+            
+            <label for="username">Nom d'utilisateur :</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password" required>
+            
+            <label for="secret">Votre secret :</label>
+            <textarea id="secret" name="secret" required></textarea>
+            
+            <button type="submit" class="button pink-button">Créer mon compte</button>
+        </form>
+    </div>
+</body>
+</html>
