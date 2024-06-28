@@ -10,4 +10,8 @@ export const urls_apis = {
     //GESTION DES UTILISATEURS
     API_All_USERS           : environment.API_URL + "user",
 
+
+    API_ADD_PROP            : environment.API_URL + "proposition/new",
+    API_UPDATE_PROP         : environment.API_URL + "proposition/update",
+    API_GET_PROPS           : environment.API_URL + "proposition",
 };

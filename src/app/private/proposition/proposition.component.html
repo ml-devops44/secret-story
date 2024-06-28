@@ -1,21 +1,22 @@
 <div class="conteneur">
     <div class="MySecret">
-
+        {{ connectedUser.secret }}
     </div>
 
-    <div class="Secret" *ngFor="let secret of secrets; let i = index" >
-         <p>"{{ secret.secret }}"</p>
+    <div class="Secret" *ngFor="let proposition of propositions; let i = index" >
+         <p>"{{ proposition.user_secret.secret }}"</p>
 
 
 
        
         <p-floatLabel>
             <p-dropdown 
-                [options]="freeUser" 
-                [(ngModel)]="selectedUsers[secret.id]" 
+                [options]="users" 
+                [(ngModel)]="proposition.user_selected" 
                 optionLabel="prenom" 
                 [showClear]="true"
                 placeholder="Ce secret appartient à ..." 
+                (onChange)="saveProposition(proposition)"
                 >
             </p-dropdown>
             <label for="float-label">Sélectionnez un utilisateur</label>

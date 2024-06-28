@@ -14,6 +14,7 @@ export class AuthenticationService {
   private isAuthenticated     : boolean     = false;
   private firstname           : string      = ""; 
   private lastname            : string      = "";
+  private username            : string      = "";
   private refreshTokenInterval: number      = 10000; // 10 secondes
 
   constructor(
@@ -31,6 +32,7 @@ export class AuthenticationService {
       );
     }
 
+
     
   async login(username: string, password: string): Promise<boolean> {
     try {
@@ -42,7 +44,7 @@ export class AuthenticationService {
       this.tokenService.setRefreshToken(response.refreshToken);   // Stockage du refresh-token
       this.firstname  = response.user.firstname;                  // Stockage du prénom de l'utilisateur connecté
       this.lastname   = response.user.lastname;                   // Stockage du nom de l'utilisateur connecté
-      
+      this.username = username;
       this.isAuthenticated = true;
       return true;
     } catch (error) {
@@ -53,6 +55,10 @@ export class AuthenticationService {
 
   getIdentity(){
     return (this.firstname + " " + this.lastname.toUpperCase());
+  }
+
+  getUsernameOfConnectedUser(){
+    return this.username;
   }
 
   getInitials(){
@@ -80,8 +86,8 @@ export class AuthenticationService {
         this.tokenService.setRefreshToken(response.refresh_token);
         this.firstname        = response.user.firstname;
         this.lastname         = response.user.lastname;
+        this.username         = response.user.username;
         this.isAuthenticated  = true;
-       
         return true;
       } else {
         return false;
