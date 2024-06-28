@@ -5,11 +5,13 @@
 /tmp
 /out-tsc
 /bazel-out
+.env
 
 # Node
 /node_modules
 npm-debug.log
 yarn-error.log
+.nx/cache
 
 # IDEs and editors
 .idea/
@@ -27,6 +29,7 @@ yarn-error.log
 !.vscode/launch.json
 !.vscode/extensions.json
 .history/*
+.env
 
 # Miscellaneous
 /.angular/cache

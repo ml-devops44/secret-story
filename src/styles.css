@@ -1,1 +1,82 @@
 /* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/md-light-deeppurple/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+:root{
+    --primary-purple : #6647ee;
+    --version-purple : rgb(168, 148, 255);
+    --grey-backrgound : rgb(243, 243, 243);
+    --shadow-grey : rgb(206, 206, 206); 
+    --shadow-purple : rgb(217, 208, 255); 
+    --gey-subtitle : grey;
+    --fond-formulaire : rgb(245, 245, 245);
+
+    --border-radius : 8px;
+
+    --expert-background : #d9d0ff;
+    --expert-text : #6647ED;
+    --oxalis-background : #f2cdff;
+    --oxalis-text : #C353ED;
+    --ddc-background : #ffe5a7;
+    --ddc-text : #c0912b;
+    --gnau-background : #edffc2;
+    --gnau-text : #8db82b;
+
+    --sql-server-background : #ffcecd;
+    --sql-server-text : #E5312A;
+    --postgres-background : #b9e0ff;
+    --postgres-text : #336791;
+    --mysql-background : #ffeed4;
+    --mysql-text : #E88B03;
+}
+
+ input{
+    font-size: 0.8em;
+    width:300px;
+}
+
+label{
+    font-size: 0.9em;
+}
+
+.vignette{
+    padding-block: 2px;
+    margin:5px;
+    text-align: center;
+    border-radius: 10px;
+}
+.postgres{
+    background-color: var(--postgres-background);
+    color: var(--postgres-text);
+}
+
+.mysql{
+    background-color: var(--mysql-background);
+    color: var(--mysql-text);
+}
+
+.sql-server{
+    background-color: var(--sql-server-background);
+    color: var(--sql-server-text);
+}
+
+.oxalis{
+    background-color: var(--oxalis-background);
+    color: var(--oxalis-text);
+}
+
+.ddc{
+    background-color: var(--ddc-background);
+    color: var(--ddc-text);
+}
+
+.gnau{
+    background-color: var(--gnau-background);
+    color: var(--gnau-text);
+}
+
+.expert{
+    background-color: var(--expert-background);
+    color: var(--expert-text);
+}
