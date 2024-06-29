@@ -96,4 +96,21 @@ export class PropositionService {
 
   }
 
+
+  async getScore() : Promise<any> {
+
+    try {
+      const response : any = await this.http.get(urls_apis.API_GET_SCORE).toPromise(); 
+      if(response){
+        return response;
+      }else{
+        throw new Error('erreur');
+      }
+
+    } catch (error) {
+      console.log(error)
+    }
+
+  }
+
 }

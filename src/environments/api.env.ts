@@ -12,6 +12,7 @@ export const urls_apis = {
 
 
     API_ADD_PROP            : environment.API_URL + "proposition/new",
-    API_UPDATE_PROP         : environment.API_URL + "proposition/update",
+    API_UPDATE_PROP         : environment.API_URL + "getScoreupdate",
     API_GET_PROPS           : environment.API_URL + "proposition",
+    API_GET_SCORE           : environment.API_URL + "proposition/result",
 };

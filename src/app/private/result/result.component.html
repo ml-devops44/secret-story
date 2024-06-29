@@ -1,0 +1,10 @@
+<div class="subheader">
+    <button *ngIf="affichage" class="activeBtn" (click)="changerAffichage()">Réponses</button>
+    <button *ngIf="!affichage" class="unactiveBtn" (click)="changerAffichage()">Réponses</button>
+    <button *ngIf="!affichage" class="activeBtn" (click)="changerAffichage()">Classement</button>
+    <button *ngIf="affichage" class="unactiveBtn" (click)="changerAffichage()">Classement</button>
+</div>
+<div class="centrepage">
+    <app-score *ngIf="!affichage"></app-score>
+    <app-reponses *ngIf="affichage"></app-reponses>
+</div>
