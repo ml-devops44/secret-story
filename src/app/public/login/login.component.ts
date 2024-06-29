@@ -65,6 +65,10 @@ export class LoginComponent implements OnInit {
       });
     }
   }
+
+  public retour(){
+    this.router.navigate(['/public']);
+  }
 }
  
  

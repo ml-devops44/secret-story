@@ -1,30 +1,18 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secret Story - Créer un compte</title>
-    <link href="https://fonts.cdnfonts.com/css/aachen" rel="stylesheet">
-    <link rel="stylesheet" href="login.component.css">
-</head>
-<body>
-    <div class="container">
-        <img class="logo" src="../../../assets/logo.png" alt="Secret Story Logo">
-        <form class="form-container">
-            <label for="fullname">Prénom & Nom :</label>
-            <input type="text" id="fullname" name="fullname" required>
-            
-            <label for="username">Nom d'utilisateur :</label>
-            <input type="text" id="username" name="username" required>
-            
-            <label for="password">Mot de passe :</label>
-            <input type="password" id="password" name="password" required>
-            
-            <label for="secret">Votre secret :</label>
-            <textarea id="secret" name="secret" required></textarea>
-            
-            <button type="submit" class="button pink-button">Créer mon compte</button>
-        </form>
-    </div>
-</body>
-</html>
+
+<div class="container">
+        
+    <img class="logo" src="../../../assets/logo.png" alt="Secret Story Logo">
+
+   
+    <form class="form-container">
+        <label for="username">Nom d'utilisateur :</label>
+        <input type="text" [(ngModel)]="username" id="username" name="username" required>
+        
+        <label for="password">Mot de passe :</label>
+        <input type="password" [(ngModel)]="password"  id="password" name="password" required>
+        
+        <button type="submit" (click)="connexion()" class="button pink-button">Connexion</button>
+    </form>
+
+    <button class="retour" (click)="retour()">< Retour</button>
+</div>

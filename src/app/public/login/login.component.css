@@ -1,19 +1,7 @@
-body, html {
-    margin: 0;
-    padding: 0;
+.container {
     width: 100%;
     height: 100%;
-    font-family: 'Aachen', sans-serif;
-    background: #f2f2f2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.container {
-    width: 390px;
-    height: 844px;
-    position: relative;
+    position: absolute;
     background: #fff;
     background-image: url(../../../assets/Fond1.jpg);
     background-size: cover;
@@ -27,8 +15,11 @@ body, html {
 }
 
 .logo, .logo-small {
-    width: 200px;
-    margin: 20px auto;
+    position: absolute;
+    width: 50%;
+    margin-inline: 25%;
+    top : 60px;
+
 }
 
 .logo-small {
@@ -51,7 +42,7 @@ body, html {
     font-size: 18px;
     text-align: center;
     text-decoration: none;
-    transition: background 0.3s ease;
+    transition:  0.3s ease;
     line-height: 1.5em;
 }
 
@@ -72,8 +63,10 @@ body, html {
 }
 
 .form-container {
+    
     width: 80%;
     margin: 20px auto;
+    margin-top: 200px;
     padding: 20px;
     border-radius: 10px;
     text-align: left;
@@ -105,4 +98,17 @@ body, html {
 
 .button {
     font-family: 'Aachen', sans-serif;
+}
+
+.retour{
+    position: absolute;
+    top:10px; 
+    left:10px;
+    font-family: 'Aachen', sans-serif;
+    color:#365E77;
+    border-radius: 10px;
+    border-style: none;
+    padding-inline: 20px;
+    padding-block: 10px;
+    background-color: rgba(255, 255, 255, 0.575);
 }

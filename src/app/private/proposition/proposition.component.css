@@ -1,5 +1,7 @@
 .conteneur{
     background-color: blue;
+    background-image: url(../../../assets/Fond1.jpg);
+    background-attachment: fixed;
     position: absolute;
     width: 100%;
     height: 100%;

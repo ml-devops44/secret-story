@@ -51,35 +51,32 @@ export class UserService {
     }
   }
 
-  // async addUser(newUser : User  ): Promise<number>{
-  //   if(newUser.password != undefined && newUser.email != undefined){
-  //     const  userForRequest : newUserInterface = {
-  //       lastname  : newUser.lastname,  
-  //       firstname : newUser.firstname, 
-  //       role      : newUser.role.value,
-  //       mail     : newUser.email,
-  //       type      : newUser.type.value, 
-  //       username  : newUser.username, 
-  //       password  : newUser.password,
-  //       isActive  : newUser.state.value,
-  //       last_connexion : undefined
-  //      }
+  async addUser(newUser : newUserInterface  ): Promise<number>{
+    console.log(newUser)
+    if(newUser.password != undefined && newUser.username != undefined){
+      const  userForRequest : newUserInterface = {
+        username: newUser.username,
+        password: newUser.password,
+        prenom: newUser.prenom,
+        nom: newUser.nom,
+        secret: newUser.secret,
+       }
 
-  //   try {
-  //     const response : any = await this.http.post(urls_apis.API_CREATE_USER,userForRequest).toPromise(); 
-  //     if(response){
-  //       return response.id;
-  //     }else{
-  //       throw new Error('erreur de suppression');
-  //     }
+    try {
+      const response : any = await this.http.post(urls_apis.API_CREATE_USER,userForRequest).toPromise(); 
+      if(response){
+        return response.id;
+      }else{
+        throw new Error('erreur dans');
+      }
 
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  //   return 0;
-  // }
-  // return 0;
-  // }
+    } catch (error) {
+      console.log(error)
+    }
+    return 0;
+  }
+  return 0;
+  }
 
   // async updateUser(newInfosUsers : User) : Promise<boolean> {
 

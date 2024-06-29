@@ -6,6 +6,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { ButtonModule } from 'primeng/button';
 import { PublicRoutingModule } from './public-routing.module';
+import { FormsModule } from '@angular/forms';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 @NgModule({
   declarations: [
     PublicComponent
@@ -14,7 +16,9 @@ import { PublicRoutingModule } from './public-routing.module';
     CommonModule,
     PublicRoutingModule,
     InputTextModule,
+    InputTextareaModule,
     PasswordModule,
+    FormsModule,
     ButtonModule
   ], providers:[
     // {
